@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Poll{
+  id String @id @default(uuid())
+  title String
+  createdat DateTime @default(now())
+  uptadedat DateTime @default(now())
+}
+
+
+
+
+// qualquer coisa adicionar o código: 
+//"[prisma]":{
+//    "editor.formatOnSave": true,} na aba de user.settings.json se der errado em algum lugar.
